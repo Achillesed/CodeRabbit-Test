@@ -1,0 +1,47 @@
+/**
+    Filename: WEAK_RAND_S.c
+    Vuln: WEAK_RAND_S
+    SourceLine: -1
+    SinkLine: 15
+    Comment: 使用密码学上弱的伪随机数生成器（PRNG）
+*/
+
+#if __WIN32
+#include <wincrypt.h>
+#include <windows.h>
+#else
+#include <sys/random.h>
+#endif
+#include <time.h>
+int WEAK_RAND_S_BAD() 
+{
+    int data = rand();//缺陷点：rand()是一个基于线性同余算法的伪随机数生成器（PRNG），其随机性较弱，不适合用于密码学或安全相关的场景。
+    return data;
+}
+#if __WIN32
+int WEAK_RAND_S_GOOD() 
+{
+  HCRYPTPROV hP = NULL;
+  int rddata;
+  if(CryptAcquireContext(&hP, NULL, NULL, PROV_RSA_FULL, CRYPT_VERIFYCONTEXT)) {
+    return -1;
+  }
+  if(!CryptGenRandom(hP, sizeof(rddata), &rddata)) {   //修复点
+    CryptReleaseContext(hP, 0);
+    return -1;
+  }
+  CryptReleaseContext(hP, 0);
+  return rddata;
+}
+
+#else
+int WEAK_RAND_S_GOOD(int *p) 
+{
+    int data;
+    if (getrandom(&data, sizeof(data), GRND_NONBLOCK) != sizeof(data)) {    //修复点
+        srand(time(NULL)); 
+        // do some else crypt
+    }
+    return data;
+}
+#endif
