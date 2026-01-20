@@ -9,11 +9,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * Compute the average of two integers using integer arithmetic; fractional part may be lost.
+ *
+ * @param a First integer operand.
+ * @param b Second integer operand.
+ * @returns The average of `a` and `b` as an `int`; any fractional component is discarded.
+ */
 int BAD_FLOAT_RET_BAD(int a, int b) 
 {
     return (int)(0.5 + ((a + b) / 2)); // 缺陷点：除数和被除数都不为浮点型，结果被截断为整数，可能会丢失精度
 }
 
+/**
+ * Compute the average of two integers and return it rounded to the nearest integer.
+ *
+ * @param a First integer operand.
+ * @param b Second integer operand.
+ * @returns The average of `a` and `b`, rounded to the nearest `int`.
+ */
 int BAD_FLOAT_RET_GOOD(int a, int b) 
 {
     return (int)(0.5 + ((double)a + b) / 2); // 修复点：被除数为浮点型

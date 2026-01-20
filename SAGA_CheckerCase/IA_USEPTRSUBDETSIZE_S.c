@@ -11,6 +11,11 @@
 
 #include <string.h>
 
+/**
+ * Demonstrates incorrect pointer subtraction by subtracting a pointer into one array from the base of a different array.
+ *
+ * Locates '/' in s1 and computes Pos as (ptrPos - s2); subtracting pointers that do not point into the same array can produce an incorrect value or undefined behavior.
+ */
 void IA_USEPTRSUBDETSIZE_S_BAD()
 {
     char s1[] = "abc/opqrstu";
@@ -21,6 +26,11 @@ void IA_USEPTRSUBDETSIZE_S_BAD()
     Pos = (size_t) (ptrPos - s2);   //缺陷点：ptrPos（指向 s1） 与 s2 指向不同的内存区域，计算可能不在意料之中
 }
 
+/**
+ * Compute the index of the first '/' character in s1 and store it in the local variable `Pos`.
+ *
+ * Demonstrates correct pointer subtraction by subtracting a pointer into `s1` from `s1`'s base.
+ */
 void IA_USEPTRSUBDETSIZE_S_GOOD()
 {
     char s1[] = "abc/opqrstu";

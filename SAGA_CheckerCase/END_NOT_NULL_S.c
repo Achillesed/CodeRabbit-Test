@@ -4,6 +4,11 @@ struct namemap {
   char name[20 + 1];
 };
 #include<stdio.h>
+/**
+ * Allocate a namemap and copy up to 21 bytes from the provided source into its name field; the stored name may not be null-terminated if the source is 21 bytes or longer.
+ *
+ * @param name Source C string to copy from; if its length is 21 bytes or greater, the destination may be left without a terminating NUL byte.
+ */
 void END_NOT_NULL_S_BAD(char *name)
 {
     register struct namemap *nameptr = malloc(sizeof(struct namemap));
@@ -11,6 +16,14 @@ void END_NOT_NULL_S_BAD(char *name)
     // ...
 }
 
+/**
+ * Allocate a namemap and store a null-terminated copy of the provided name truncated to at most 20 characters.
+ *
+ * The function allocates a struct namemap on the heap and copies up to 20 bytes from `name` into the struct's
+ * `name` field, ensuring the stored string is null-terminated.
+ *
+ * @param name Input C string to copy into the allocated namemap; if longer than 20 bytes it will be truncated.
+ */
 void END_NOT_NULL_S_GOOD(char *name)
 {
     register struct namemap *nameptr = malloc(sizeof(struct namemap));

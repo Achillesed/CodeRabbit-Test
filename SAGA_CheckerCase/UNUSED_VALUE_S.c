@@ -10,6 +10,11 @@
 #include <stdlib.h>
 int getValue();
 int getNewBuffer(int);
+/**
+ * Illustrates overwriting a previously assigned value before it is used.
+ *
+ * @returns The integer result produced by the final assignment (the value returned by getNewBuffer).
+ */
 int UNUSED_VALUE_S_BAD() 
 {
     int r;
@@ -19,6 +24,11 @@ int UNUSED_VALUE_S_BAD()
     return r;
 }
 
+/**
+ * Preserve an initially retrieved value before overwriting and return the final buffer value.
+ *
+ * @returns The integer value stored in `r` after it is overwritten (the final buffer value).
+ */
 int UNUSED_VALUE_S_GOOD() 
 {
     int r;
@@ -28,4 +38,3 @@ int UNUSED_VALUE_S_GOOD()
     r = getNewBuffer(buf);
     return r;
 }
-

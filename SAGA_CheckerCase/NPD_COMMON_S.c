@@ -7,6 +7,12 @@
 */
 
 #include <stdio.h>
+/**
+ * Sets `p` to NULL and, if `a` is greater than 2, attempts to write through `p`, causing a null pointer dereference.
+ *
+ * @param a Integer that controls whether the dereference occurs; when greater than 2 the function will attempt to assign through `p`.
+ * @param p Pointer which is set to NULL on entry to the function (subsequent dereference is invalid).
+ */
 void NPD_COMMON_S_BAD(int a,int *p)
 {
     p = NULL;
@@ -16,6 +22,12 @@ void NPD_COMMON_S_BAD(int a,int *p)
     }
 }
 
+/**
+ * Set *p to 2 when p is non-NULL and a is greater than 2.
+ *
+ * @param a Integer used as the condition; the assignment occurs only if a > 2.
+ * @param p Pointer to the integer to update; if `p` is NULL the function returns without modifying anything.
+ */
 void NPD_COMMON_S_GOOD(int a,int *p)
 { 
     if(!p) return;

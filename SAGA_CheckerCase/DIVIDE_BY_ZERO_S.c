@@ -9,6 +9,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 int getvalue();
+/**
+ * Demonstrates an unsafe division that may divide by zero.
+ *
+ * Calls getvalue() to obtain an integer and performs `10 / a` unconditionally,
+ * printing the result. If `a` is zero, this results in a runtime divide-by-zero.
+ */
 void DIVIDE_BY_ZERO_S_BAD()
 {
     int a = getvalue();
@@ -23,6 +29,12 @@ void DIVIDE_BY_ZERO_S_BAD()
     printf("%d\n", 10 / a); //缺陷点：15行 'a == 0'说明 a 在此分支可能为 0
 }
 
+/**
+ * Perform a safe division of 10 by a value obtained from getvalue.
+ *
+ * Calls getvalue() to obtain an integer `a` and prints the result of `10 / a`
+ * only when `a` is not zero; no division is performed when `a` equals zero.
+ */
 void DIVIDE_BY_ZERO_S_GOOD()
 {
     int a = getvalue();

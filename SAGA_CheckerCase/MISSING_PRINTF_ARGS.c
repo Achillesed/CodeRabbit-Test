@@ -8,6 +8,14 @@
 
 #include <stdio.h>
 
+/**
+ * Demonstrates insecure use of printf by providing a format specifier without its matching argument.
+ *
+ * Calls printf with the format string "Name %s" but does not supply the required argument for `%s`,
+ * which can cause undefined behavior.
+ *
+ * @returns 0
+ */
 int MISSING_PRINTF_ARGS_BAD() 
 {
     char* name = "Alice";
@@ -16,6 +24,12 @@ int MISSING_PRINTF_ARGS_BAD()
     return 0;
 }
 
+/**
+ * Demonstrates correct usage of printf by printing a name with the matching "%s" format specifier.
+ *
+ * Prints "Name Alice" to standard output.
+ * @returns 0 on success.
+ */
 int MISSING_PRINTF_ARGS_GOOD() 
 {
     char* name = "Alice";

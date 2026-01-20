@@ -9,6 +9,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * Demonstrates unsafe printing by passing an externally controlled string as printf's format specifier.
+ *
+ * If called with argc == 1, the function reads the PATH environment variable and passes it directly to printf
+ * as the format string, which can cause format string vulnerabilities (e.g., unexpected memory access or crashes)
+ * when the environment value contains format specifiers.
+ *
+ * @param argc Controls execution; the environment is printed only when argc == 1.
+ * @param argv Unused.
+ */
 void FORMAT_STRING_S_BAD(int argc,char *argv[])
 { 
     char * environment = getenv("PATH");
@@ -20,6 +30,11 @@ void FORMAT_STRING_S_BAD(int argc,char *argv[])
     }
 }
 
+/**
+ * Safely prints the PATH environment variable when the program is invoked with a single argument.
+ *
+ * Uses a fixed "%s" format specifier to print the value of the PATH environment variable, preventing uncontrolled format-string usage.
+ */
 void FORMAT_STRING_S_GOOD(int argc,char *argv[])
 { 
     
@@ -30,4 +45,3 @@ void FORMAT_STRING_S_GOOD(int argc,char *argv[])
         /* do something */
     }
 }
-
