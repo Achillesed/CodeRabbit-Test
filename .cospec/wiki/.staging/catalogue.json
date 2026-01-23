@@ -1,0 +1,146 @@
+[
+  {
+    "title": "1、项目概述",
+    "prompt": "帮助用户快速理解SAGA Checker测试用例库的核心定位、价值和应用场景，包括项目背景、目标用户群体、技术栈组成以及整体项目结构",
+    "sections": [
+      {
+        "title": "project-introduction",
+        "name": "项目简介",
+        "prompt": "详细说明SAGA Checker测试用例库的项目背景、定位和核心价值。解释这是一个专门用于静态代码分析工具的标准化测试用例库，包含130+个C/C++测试文件，覆盖多种安全漏洞类型。说明项目的主要用途是验证静态分析工具的检测能力，为开发者提供标准化的缺陷测试样本。"
+      },
+      {
+        "title": "target-users",
+        "name": "目标用户",
+        "prompt": "明确列出本项目的目标用户群体，包括静态分析工具开发者、安全研究员、代码审计人员、C/C++开发者等。说明不同用户群体如何使用本测试用例库，例如：开发者用于验证工具检测能力、研究人员用于研究安全漏洞模式、学习者用于学习常见编码错误。"
+      },
+      {
+        "title": "tech-stack-overview",
+        "name": "技术栈概览",
+        "prompt": "详细分析项目使用的技术栈，包括：编程语言（C和C++）、编译器（GCC）、构建工具（Make）、静态分析工具（SAGA Checker）。说明为什么选择这些技术，它们在项目中的作用，以及版本要求和依赖关系。"
+      },
+      {
+        "title": "project-structure",
+        "name": "项目结构",
+        "prompt": "系统梳理项目的目录结构和文件组织方式。详细说明SAGA_CheckerCase目录下130+个测试用例文件的命名规则（VULNERABILITY_TYPE_S.c/cpp格式）、根目录README.md的作用、Makefile的用途。解释测试文件如何按照安全领域（内存安全、并发安全、类型转换等）进行逻辑分类。"
+      },
+      {
+        "title": "core-features",
+        "name": "核心特性",
+        "prompt": "总结项目的核心特性，包括：BAD/GOOD对比模式（每个测试包含缺陷版本和修复版本）、标准化注释标注（明确标注缺陷点和修复点）、类型标识（_S表示静态分析测试）、多安全领域覆盖（内存安全、并发安全、类型安全等8大领域）、构建系统支持（通过Makefile批量编译成静态库）。"
+      }
+    ]
+  },
+  {
+    "title": "2、测试用例规范",
+    "prompt": "详细说明测试用例文件的命名规范、结构规范、注释规范和编写标准，确保开发者能够理解如何阅读、使用和扩展测试用例",
+    "sections": [
+      {
+        "title": "file-naming-conventions",
+        "name": "文件命名规范",
+        "prompt": "详细解释测试用例文件的命名规则，包括：VULNERABILITY_TYPE_S.c/cpp格式说明、漏洞类型命名规范（如DOUBLE_FREE、MEMORY_LEAK、NPD等）、_S后缀的含义（Static Analysis静态分析）、.c和.cpp的区别（C语言测试与C++测试）。提供具体的文件命名示例和反例。"
+      },
+      {
+        "title": "file-structure-standards",
+        "name": "文件结构规范",
+        "prompt": "详细说明每个测试用例文件的标准结构，包括：文件头注释说明（漏洞类型描述、缺陷位置、修复方法）、BAD函数实现（包含缺陷的代码）、GOOD函数实现（修复后的代码）、辅助函数（如需要）。通过具体代码示例展示标准结构，说明为什么采用这种对比模式。"
+      },
+      {
+        "title": "annotation-guidelines",
+        "name": "注释规范",
+        "prompt": "详细说明测试用例中的标准注释规范，包括：缺陷标注注释（// BUG或// ERROR标记缺陷位置）、修复说明注释（// FIX或// CORRECT标记修复位置）、代码意图注释（解释复杂逻辑的业务含义）。提供具体的注释示例，说明注释如何帮助静态分析工具和开发者理解代码。"
+      },
+      {
+        "title": "bad-good-pattern",
+        "name": "BAD/GOOD对比模式",
+        "prompt": "深入解释BAD/GOOD对比模式的设计理念和实现方式。说明如何在同一个文件中实现缺陷版本和修复版本的对比、两者之间的差异点、为什么这种模式适合静态分析工具测试。提供具体的代码对比示例，展示如何通过对比验证工具的检测能力。"
+      },
+      {
+        "title": "test-case-classification",
+        "name": "测试用例分类",
+        "prompt": "系统梳理测试用例的分类体系，包括：按语言分类（C测试、C++测试）、按安全领域分类（内存安全、并发安全、类型转换等8大领域）、按严重程度分类（_S表示静态分析必检项、无后缀表示潜在问题）。详细说明各个分类下的测试用例数量、分布情况和典型示例。"
+      }
+    ]
+  },
+  {
+    "title": "3、测试覆盖领域",
+    "prompt": "系统梳理测试用例库覆盖的8大安全领域，详细说明每个领域包含的测试类型、典型漏洞模式和示例分析",
+    "sections": [
+      {
+        "title": "memory-safety-tests",
+        "name": "内存安全测试",
+        "prompt": "详细分析内存安全领域的测试用例，包括：DOUBLE_FREE_S.c（双重释放）、MEMORY_LEAK_S.c（内存泄漏）、USE_AFTER_FREE_S.c（释放后使用）、HEAP_OVERFLOW_S.c（堆溢出）、STACK_OVERFLOW_S.c（栈溢出）。说明每个漏洞类型的典型场景、危害程度、检测要点，提供具体的代码片段分析。"
+      },
+      {
+        "title": "null-pointer-tests",
+        "name": "空指针解引用测试",
+        "prompt": "详细分析空指针解引用领域的测试用例，包括：NPD_CMP_S.c（比较前未检查）、NPD_COMMON_S.c（常见空指针模式）、NPD_NFR_S.c（非函数返回的空指针）、NPD_DYNAMIC_CAST_S.cpp（C++动态转换空指针）。说明不同场景下空指针的产生原因、检测方法和修复策略。"
+      },
+      {
+        "title": "concurrency-safety-tests",
+        "name": "并发安全测试",
+        "prompt": "详细分析并发安全领域的测试用例，包括：CONC_NO_LOCK_S.c（未加锁）、CONC_DLOCK_S.c（重复加锁）、CONC_DUNLOCK_S.c（重复解锁）、RACE_CONDITION_WITHIN_THREAD_S.c（线程内竞态）、DEAD_MUTEX_S_BAD.c（互斥锁死锁）、DEAD_MUTEX_S_GOOD.c（互斥锁正确使用）。说明并发编程中的常见陷阱、锁的正确使用模式、死锁的避免策略。"
+      },
+      {
+        "title": "type-conversion-tests",
+        "name": "类型转换与指针操作测试",
+        "prompt": "详细分析类型转换与指针操作领域的测试用例，包括：INCOMPATIBLE_CAST_S.c（不兼容类型转换）、POR_IMCOMPATIBLE_TYPE_S.c（指针指向不同类型）、POR_FPTR_TO_NFPTR_S.c（函数指针与非函数指针转换）、POR_PTR_BTW_NPTR_S.c（指针类型操作错误）。说明类型转换的安全风险、指针操作的正确模式、如何避免类型相关的漏洞。"
+      },
+      {
+        "title": "buffer-overflow-tests",
+        "name": "缓冲区溢出测试",
+        "prompt": "详细分析缓冲区溢出领域的测试用例，包括：OOB_READ_S.c（越界读取）、OOB_WRITE_S.c（越界写入）、NEGATIVE_INDEX_READ_S.c（负索引读取）、NEGATIVE_INDEX_WRITE_S.c（负索引写入）。说明缓冲区溢出的典型场景、攻击向量、防御策略，提供具体的代码漏洞分析和修复方法。"
+      },
+      {
+        "title": "resource-management-tests",
+        "name": "资源管理测试",
+        "prompt": "详细分析资源管理领域的测试用例，包括：RESOURCE_LEAK_S.c（资源泄漏）、BAD_FILE_OPEN_S.c（文件操作错误）、CHECKED_RETURN_S.c（未检查返回值）、CHECKED_RETURN_BEFORE_S.c（检查前使用返回值）。说明资源管理的最佳实践、错误处理的正确模式、如何避免资源泄漏和逻辑错误。"
+      },
+      {
+        "title": "arithmetics-tests",
+        "name": "算术运算测试",
+        "prompt": "详细分析算术运算领域的测试用例，包括：BAD_SHIFT.c（错误的位移操作）、BAD_ALLOC_ARITHMETIC_S.c（分配时的算术错误）、DIVIDE_BY_ZERO_S.c（除以零）。说明算术运算中常见的边界情况、整数溢出的风险、除零错误的预防措施，提供具体的代码示例和修复建议。"
+      },
+      {
+        "title": "cpp-specific-tests",
+        "name": "C++特定测试",
+        "prompt": "详细分析C++特定特性的测试用例，包括：DELETE_ARRAY.cpp（delete/delete[]混用）、DELETE_VOID.cpp（删除void指针）、UNCAUGHT_EXCEPT.cpp（未捕获异常）、UNINIT_IN_CTOR_S.cpp（构造函数未初始化成员）、VCALL_IN_CTOR_DTOR.cpp（构造/析构函数中虚函数调用）、VIRTUAL_DTOR.cpp（虚析构函数问题）。说明C++特有的安全风险、RAII原则的正确应用、异常安全的编程模式。"
+      }
+    ]
+  },
+  {
+    "title": "4、构建与使用",
+    "prompt": "详细说明测试用例库的编译流程、构建方法、测试执行方式以及最佳实践，帮助开发者快速上手和使用测试用例",
+    "sections": [
+      {
+        "title": "build-environment-setup",
+        "name": "构建环境配置",
+        "prompt": "详细说明构建测试用例库所需的环境配置，包括：GCC编译器版本要求（建议GCC 4.8+）、Make工具的安装和配置、必要的系统依赖（如pthread库用于并发测试）。提供不同操作系统（Linux、macOS、Windows通过WSL）下的环境配置步骤和验证方法。"
+      },
+      {
+        "title": "compilation-process",
+        "name": "编译流程说明",
+        "prompt": "详细解析Makefile的编译流程，包括：如何使用make命令编译所有测试用例、编译产物的生成位置和格式（静态库）、单独编译特定测试用例的方法、编译选项的含义（如-Wall -Werror等）。说明Makefile的工作原理、编译目标的依赖关系、如何自定义编译流程。"
+      },
+      {
+        "title": "test-execution",
+        "name": "测试执行方法",
+        "prompt": "详细说明如何执行测试用例，包括：静态分析工具的集成方式、如何将测试用例库作为输入提供给SAGA Checker、如何解析和分析检测输出、如何验证工具的检测准确率（检测出BAD但未检测出GOOD）。提供具体的执行命令示例和输出格式说明。"
+      },
+      {
+        "title": "integration-usage",
+        "name": "集成使用方式",
+        "prompt": "详细说明如何将测试用例库集成到开发流程中，包括：作为CI/CD流程的一部分、自定义测试集的选择方式、扩展测试用例的方法、与其它静态分析工具的对比测试。提供具体的集成示例和最佳实践建议。"
+      },
+      {
+        "title": "best-practices",
+        "name": "最佳实践",
+        "prompt": "总结使用测试用例库的最佳实践，包括：如何选择相关的测试用例集、如何理解BAD/GOOD对比的区别、如何将测试结果反馈到代码改进、如何为新发现的漏洞模式添加测试用例、如何维护和更新测试用例库。提供实用的建议和注意事项。"
+      },
+      {
+        "title": "troubleshooting",
+        "name": "常见问题排查",
+        "prompt": "列出版本使用过程中可能遇到的常见问题及解决方案，包括：编译错误（如缺少头文件、链接错误）、静态分析工具输出解读问题、误报和漏报的处理、性能优化的建议。提供具体的错误示例和排查步骤。"
+      }
+    ]
+  }
+]
