@@ -1,0 +1,3 @@
+reviews:
+  max_files: 300
+  branches: all
