@@ -11,11 +11,24 @@
 
 pthread_mutex_t* mutex;
 
+/**
+ * Determine whether the precondition for the recursive-locking checks holds.
+ *
+ * Currently implemented as a stub that always returns `true`.
+ *
+ * @returns `true` if the precondition holds, `false` otherwise.
+ */
 bool preconditionHolds() {
     // ...
     return true;
 }
 
+/**
+ * Demonstrates a computation performed under a non-recursive mutex that (incorrectly) recurses while the lock is held.
+ *
+ * Locks the global non-recursive `mutex`, performs conditional work, and calls itself recursively while still holding the lock.
+ * This causes an attempt to re-lock the same non-recursive mutex and can result in deadlock or undefined behavior.
+ */
 void exclusivelyCompute_bad()
 {
     pthread_mutex_lock(mutex);
@@ -26,6 +39,12 @@ void exclusivelyCompute_bad()
     pthread_mutex_unlock(mutex);
 }
 
+/**
+ * Demonstrates an incorrect recursive locking scenario using a non-recursive pthread mutex.
+ *
+ * Allocates and initializes a mutex, invokes a computation that may recursively attempt to
+ * acquire the same mutex (leading to deadlock or undefined behavior), then destroys and frees the mutex.
+ */
 void RECURSIVE_LOCK_S_BAD()
 {
     mutex = (pthread_mutex_t*)malloc(sizeof(pthread_mutex_t));
@@ -35,6 +54,12 @@ void RECURSIVE_LOCK_S_BAD()
     free(mutex);
 }
 
+/**
+ * Perform the computation recursively without acquiring the global mutex.
+ *
+ * When the precondition holds, executes the computation and recurses into the same
+ * non-locking path so the mutex is not locked repeatedly across recursive calls.
+ */
 static void nonexclusivelyCompute()
 {
     if (preconditionHolds()) {
@@ -43,6 +68,13 @@ static void nonexclusivelyCompute()
     }
 }
 
+/**
+ * Execute a computation while holding the global mutex to ensure exclusive access.
+ *
+ * Acquires the global `mutex`, performs the recursive-safe computation, and then
+ * releases the `mutex`. The computation invoked does not re-acquire the same mutex,
+ * avoiding recursive locking of a non-recursive mutex.
+ */
 void exclusivelyCompute_good()
 {
     pthread_mutex_lock(mutex);
@@ -50,6 +82,12 @@ void exclusivelyCompute_good()
     pthread_mutex_unlock(mutex);
 }
 
+/**
+ * Set up a non-recursive mutex, execute the corrected locking scenario, and free resources.
+ *
+ * Allocates and initializes a pthread mutex, runs the non-recursive computation protected
+ * by that mutex, and then frees the allocated mutex memory.
+ */
 void RECURSIVE_LOCK_S_GOOD()
 {
     mutex = (pthread_mutex_t*)malloc(sizeof(pthread_mutex_t));

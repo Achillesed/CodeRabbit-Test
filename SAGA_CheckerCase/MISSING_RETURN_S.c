@@ -9,6 +9,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * Return a mapped integer for specific input values.
+ *
+ * @param x Input value to evaluate.
+ * @returns 4 if `x` equals 5, 2 if `x` equals 3; behavior is undefined for other values (function may not return).
+ */
 int MISSING_RETURN_S_BAD(int x) 
 {
     if (x == 5)
@@ -19,7 +25,12 @@ int MISSING_RETURN_S_BAD(int x)
     {
         return 2;
     }
-}       //缺陷点：此函数存在分支缺少 return
+}       /**
+ * Map specific input values to predefined outputs.
+ *
+ * @param x Input integer to evaluate.
+ * @returns `4` if `x` equals 5, `2` if `x` equals 3, `0` otherwise.
+ */
 
 int MISSING_RETURN_S_GOOD(int x) 
 {

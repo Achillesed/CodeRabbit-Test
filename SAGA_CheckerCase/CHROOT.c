@@ -14,6 +14,15 @@ int chroot( char *);
 int open (char * path, int mode);
 int chdir(char *);
 
+/**
+ * Change the process root to /var/ftp/pub, read a filename from the network, and open that file.
+ *
+ * This function calls chroot("/var/ftp/pub"), obtains a filename via read_from_network(), and stores
+ * the resulting file descriptor from open(filename, 0) into *fd. It does not call chdir(), so the
+ * process's current working directory is not adjusted after the chroot call.
+ *
+ * @param fd Pointer to an int where the opened file descriptor will be stored.
+ */
 void CHROOT_BAD(int *fd)
 {
     char *filename;
@@ -22,6 +31,11 @@ void CHROOT_BAD(int *fd)
     *fd = open(filename, 0);
 }
 
+/**
+ * Change root to /var/ftp/pub, ensure the working directory is set inside the new root, read a filename from the network, and open that file.
+ * Reads a pathname from the network, opens it, and stores the resulting file descriptor through `fd`.
+ * @param fd Pointer to an integer where the opened file descriptor will be stored.
+ */
 void CHROOT_GOOD(int *fd)
 {
     char *filename;

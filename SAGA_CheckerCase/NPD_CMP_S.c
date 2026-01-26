@@ -9,6 +9,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * Demonstrates writing to and freeing an integer pointer without ensuring it is non-NULL.
+ *
+ * Writes a computed value to `*p` unconditionally and then calls `free(p)`; if `p` is `NULL` the write causes undefined behavior (null pointer dereference).
+ *
+ * @param p Pointer to an integer that may be NULL.
+ */
 void NPD_CMP_S_BAD(int *p) 
 {
     int x = 1;
@@ -25,6 +32,14 @@ void NPD_CMP_S_BAD(int *p)
       free(p);
 }
 
+/**
+ * Safely assigns a computed value to *p when p is non-NULL and then frees p.
+ *
+ * If `p` is non-NULL the function stores the value `2` into `*p`; if `p` is NULL no write occurs.
+ * The function always calls `free(p)` (calling free with NULL is allowed).
+ *
+ * @param p Pointer to an int that may be NULL. If non-NULL, receives the stored value before being freed.
+ */
 void NPD_CMP_S_GOOD(int *p) 
 {
     int x = 1;

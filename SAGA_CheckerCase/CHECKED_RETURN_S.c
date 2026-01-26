@@ -10,6 +10,13 @@
 #include <stdlib.h>
 #include <pthread.h>
 
+/**
+ * Demonstrates initialization of a pthread condition variable without checking the return value.
+ *
+ * This function calls pthread_cond_init and does not validate its return value, so initialization failures are not detected.
+ *
+ * @returns Always returns 0.
+ */
 int CHECKED_RETURN_S_BAD()
 {
     pthread_cond_t cond;
@@ -18,6 +25,11 @@ int CHECKED_RETURN_S_BAD()
     return 0;
 }
 
+/**
+ * Initialize a pthread condition variable and handle initialization failure.
+ *
+ * @returns `0` on success, `-1` if `pthread_cond_init` fails.
+ */
 int CHECKED_RETURN_S_GOOD()
 {
     pthread_cond_t cond;

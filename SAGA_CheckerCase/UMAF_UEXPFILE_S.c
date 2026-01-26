@@ -9,6 +9,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * Demonstrates a use-after-close by writing to a FILE* after it has been closed.
+ *
+ * Opens "1.txt" for writing, closes the stream, then attempts to write to the closed stream,
+ * which may cause undefined behavior.
+ *
+ * @returns 0 on completion.
+ */
 int UMAF_UEXPFILE_S_BAD(void) 
 {
     FILE * file ;
@@ -22,6 +30,14 @@ int UMAF_UEXPFILE_S_BAD(void)
     return 0;
 }
 
+/**
+ * Open and close the file "1.txt" without performing any operations after the stream is closed.
+ *
+ * The function opens "1.txt" with mode "w+" (creating or truncating the file) and closes the stream if opened,
+ * avoiding use-after-close on the FILE pointer.
+ *
+ * @returns Always returns 0.
+ */
 int UMAF_UEXPFILE_S_GOOD(void) 
 {
     FILE * file ;

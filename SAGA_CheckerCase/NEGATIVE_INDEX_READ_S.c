@@ -1,10 +1,11 @@
 /**
-    Filename: NEGATIVE_INDEX_READ_S.cpp
-    Vuln: NEGATIVE_INDEX_READ_S
-    SourceLine: -1
-    SinkLine: 13
-    Comment: 缓冲区向下溢出读取
-*/
+ * @brief Demonstrates a buffer under-read caused by accessing an array with a negative index.
+ *
+ * This function declares a five-element integer array and intentionally uses a negative index,
+ * resulting in an out-of-bounds read (buffer under-read).
+ *
+ * @returns 0
+ */
 
 int NEGATIVE_INDEX_READ_S_BAD() 
 {
@@ -14,6 +15,13 @@ int NEGATIVE_INDEX_READ_S_BAD()
     return 0;
 }
 
+/**
+ * Performs a safe access of a local integer array using a valid index.
+ *
+ * Accesses the first element of a five-element array (index 0) and returns 0.
+ *
+ * @returns 0.
+ */
 int NEGATIVE_INDEX_READ_S_GOOD() 
 {
     int arr[5] = {1, 2, 3, 4, 5};

@@ -12,6 +12,10 @@
 typedef enum {E1, E2}e;
 typedef enum {F0, F1, F2, F3}f;
 
+/**
+ * Demonstrates a switch on enum `e` that incorrectly contains a case for `F2` from enum `f`.
+ * @param ee Value of enum `e` to branch on.
+ */
 void MAYBE_MIXED_ENUMS_BAD(e ee) 
 {
   int num = 0;
@@ -26,6 +30,11 @@ void MAYBE_MIXED_ENUMS_BAD(e ee)
     }
 }
 
+/**
+ * Process a value of enum `e` and increment an internal counter for recognized cases.
+ *
+ * @param ee Value of enum `e` to handle; the function increments a local counter when `ee` is `E1` or `E2`.
+ */
 void MAYBE_MIXED_ENUMS_GOOD(e ee) 
 {
   int num = 0;

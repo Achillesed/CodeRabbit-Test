@@ -11,6 +11,15 @@
 
 #define SZ 16
 int getValue();
+/**
+ * Demonstrates a heap write using an incorrect upper-bound check that can write one byte past the allocated buffer.
+ *
+ * Allocates two heap buffers and obtains an index from `getValue()`. If the index is between 0 and `SZ+SZ` inclusive,
+ * a write is performed to `b[i]`. Because the check uses `<= SZ+SZ`, an index equal to `SZ+SZ` will cause an out-of-bounds
+ * write of one byte past `b`'s allocation.
+ *
+ * @returns 0 on success, -1 if memory allocation fails.
+ */
 int HEAP_OVERFLOW_S_BAD()
 {
     int i;
@@ -29,6 +38,14 @@ int HEAP_OVERFLOW_S_BAD()
     return 0;
 }
 
+/**
+ * Perform a heap write into a buffer using a corrected boundary check to prevent out-of-bounds access.
+ *
+ * Allocates two heap buffers, obtains an index from getValue(), and if the index is within [0, SZ+SZ)
+ * writes a byte to the first buffer at that index. Frees allocated memory before returning.
+ *
+ * @returns -1 if either allocation fails, 0 on success.
+ */
 int HEAP_OVERFLOW_S_GOOD()
 {
     int i;

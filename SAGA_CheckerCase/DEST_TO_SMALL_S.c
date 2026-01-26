@@ -4,6 +4,10 @@ struct namemap {
   char name[20 + 1];
 };
 #include<stdio.h>
+/**
+ * Demonstrates an unsafe string copy that writes more bytes than the destination can hold, causing a potential buffer overflow.
+ * @param name Unused parameter (present to match caller signature); ignored by this function.
+ */
 void DEST_TO_SMALL_S_BAD(char *name)
 {
     static char source[] = "Twenty characters!!!";
@@ -11,6 +15,11 @@ void DEST_TO_SMALL_S_BAD(char *name)
     memcpy(dest, source, strlen(source));   // 缺陷点：写入了 20 字节（最大量），可能越界访问了 10 字节的目标字符串。
 }
 
+/**
+ * Copy a fixed literal into a 20-byte destination using a bounds-safe length and explicit null termination.
+ *
+ * @param name Ignored parameter retained for API compatibility.
+ */
 void DEST_TO_SMALL_S_GOOD(char *name)
 {
     static char source[] = "Twenty characters!!!";

@@ -1,10 +1,11 @@
 /**
-    Filename: NEGATIVE_INDEX_WRITE_S.cpp
-    Vuln: NEGATIVE_INDEX_WRITE_S
-    SourceLine: -1
-    SinkLine: 14
-    Comment: 缓冲区向下溢出写入
-*/
+ * Demonstrates a buffer underflow by writing to an array using a negative index.
+ *
+ * This function initializes a 10-element integer array, sets the index to -1,
+ * and writes to array[index], illustrating an out-of-bounds (negative index) write.
+ *
+ * @returns 0 on completion.
+ */
 
 
 int NEGATIVE_INDEX_WRITE_S_BAD() 
@@ -15,6 +16,12 @@ int NEGATIVE_INDEX_WRITE_S_BAD()
     return 0;
 }
 
+/**
+ * Demonstrates a safe write to an array using a valid index.
+ *
+ * Writes the value 10 into a 10-element integer array at index 0 to avoid a negative-index buffer underflow.
+ * @returns 0 on success.
+ */
 int NEGATIVE_INDEX_WRITE_S_GOOD() 
 {
     int array[10] = {0};

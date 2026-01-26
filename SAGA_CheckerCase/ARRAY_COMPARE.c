@@ -9,6 +9,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * Demonstrates an incorrect comparison where an array identifier is compared to 0 instead of its element.
+ *
+ * Initializes three arrays and sets a[0] to 1 when its first element equals 0. The second conditional mistakenly
+ * compares the array name `b` (pointer) to 0, so its assignment is not executed and `b[0]` remains 0.
+ */
 void ARRAY_COMPARE_BAD() 
 {
     unsigned int a[3] = {0};
@@ -20,6 +26,11 @@ void ARRAY_COMPARE_BAD()
         b[0] = 10;  
 }
 
+/**
+ * Update the first elements of two local arrays when they are zero.
+ *
+ * If a[0] equals 0, sets a[0] to 1. If b[0] equals 0, sets b[0] to 10.
+ */
 void ARRAY_COMPARE_GOOD() 
 {
     unsigned int a[3] = {0};
