@@ -1,0 +1,30 @@
+reviews:
+  max_files: 300
+  branches: all
+  # 继续保持断言模式，不放过任何 corner case
+  profile: assertive
+  
+  tools:
+    # 1. 核心静态分析：C/C++ 领域的经典老牌工具
+    cppcheck:
+      enabled: true
+    
+    # 2. LLVM 派系：作为 LLVM 开发者，这是你最熟悉的工具，能处理复杂的语法检查
+    clang-tidy:
+      enabled: true
+    
+    # 3. 结构化搜索：利用 ast-grep 进行 AST 级别的模式匹配，适合查找特定的代码反模式
+    ast-grep:
+      enabled: true
+    
+    # 4. 安全深度防御：使用 Semgrep 进行语义化的漏洞扫描
+    semgrep:
+      enabled: true
+    
+    # 5. 供应链安全：扫描 C/C++ 依赖项中的已知漏洞 (CVEs)
+    osv-scanner:
+      enabled: true
+    
+    # 6. 工程合规：自动检查 Shell 脚本（如构建脚本）中的错误
+    shellcheck:
+      enabled: true
