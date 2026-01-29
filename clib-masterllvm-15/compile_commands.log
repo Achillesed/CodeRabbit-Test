@@ -1,0 +1,9 @@
+[2023-01-12 22:01:52]:
+	pwd:/home/ayu/sagatest/llvm-15-GithubProject/clib/clib-masterllvm-15
+	command:clang -emit-llvm -c -g -Wno-error=unused-command-line-argument -O0 deps/str-replace/str-replace.c -c -o deps/str-replace/str-replace.bc -std=c99 -Ideps -Wall -Wno-unused-function -U__STRICT_ANSI__ -DHAVE_PTHREADS=1 -pthread -MMD
+[2023-01-12 22:01:53]:
+	pwd:/home/ayu/sagatest/llvm-15-GithubProject/clib/clib-masterllvm-15
+	command:clang -emit-llvm -c -g -Wno-error=unused-command-line-argument -O0 deps/list/list.c -c -o deps/list/list.bc -std=c99 -Ideps -Wall -Wno-unused-function -U__STRICT_ANSI__ -DHAVE_PTHREADS=1 -pthread -MMD
+[2023-01-12 22:01:53]:
+	pwd:/home/ayu/sagatest/llvm-15-GithubProject/clib/clib-masterllvm-15
+	command:clang -emit-llvm -c -g -Wno-error=unused-command-line-argument -O0 deps/list/list_node.c -c -o deps/list/list_node.bc -std=c99 -Ideps -Wall -Wno-unused-function -U__STRICT_ANSI__ -DHAVE_PTHREADS=1 -pthread -MMD
