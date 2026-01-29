@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UbiSec>
+	<ProjectBasicInfo createTime="">
+		<Name></Name>
+		<BeScaned></BeScaned>
+		<FileNumber>0</FileNumber>
+		<SourcelineNumber>0</SourcelineNumber>
+		<DependenceLibs />
+		<Errors />
+		<SumInfo bugsSum="1">
+			<High>1</High>
+			<Mid>0</Mid>
+			<Low>0</Low>
+		</SumInfo>
+	</ProjectBasicInfo>
+	<BugsInfo>
+		<Bug id="47d39081c3a537fc1f4ce25d8e7d8e70">
+			<Info file="/home/wei/saga/saga-grope/testResult/PerformanceTest/OPEN_SOURCE/clib/clib-masterllvm-15/src/common/clib-package.c" line="727" column="11" endline="727" endcolumn="14" />
+			<Key><![CDATA[]]></Key>
+			<Rule weak="CWE415_Double_Free" kingdom="Errors" category="CWE415_Double_Free" type="" cwe="" />
+			<Level>5</Level>
+			<TraceInfos>
+				<TraceNode index="1" formalPara="true">
+					<Info file="/home/wei/saga/saga-grope/testResult/PerformanceTest/OPEN_SOURCE/clib/clib-masterllvm-15/src/common/clib-package.c" line="624" endline="624" column="17" endcolumn="25" type="clib_package_new_from_slug_with_package_name" edge="">
+						<Key><![CDATA[freepath:把值存入到变量json_url]]></Key>
+					</Info>
+					<Info file="/home/wei/saga/saga-grope/testResult/PerformanceTest/OPEN_SOURCE/clib/clib-masterllvm-15/src/common/clib-package.c" line="681" endline="681" column="7" endcolumn="15" type="clib_package_new_from_slug_with_package_name" edge="">
+						<Key><![CDATA[freepath:读取变量json_url的值]]></Key>
+					</Info>
+					<Info file="/home/wei/saga/saga-grope/testResult/PerformanceTest/OPEN_SOURCE/clib/clib-masterllvm-15/src/common/clib-package.c" line="681" endline="681" column="7" endcolumn="15" type="clib_package_new_from_slug_with_package_name" edge="call">
+						<Key><![CDATA[freepath:调用free的第1个实参]]></Key>
+					</Info>
+					<Info file="/home/wei/saga/saga-grope/testResult/PerformanceTest/OPEN_SOURCE/clib/clib-masterllvm-15/src/common/clib-package.c" line="778" endline="778" column="7" endcolumn="15" type="clib_package_new_from_slug_with_package_name" edge="use">
+						<Key><![CDATA[second free:读取变量json_url的值]]></Key>
+					</Info>
+					<Info file="/home/wei/saga/saga-grope/testResult/PerformanceTest/OPEN_SOURCE/clib/clib-masterllvm-15/src/common/clib-package.c" line="778" endline="778" column="7" endcolumn="15" type="clib_package_new_from_slug_with_package_name" edge="use">
+						<Key><![CDATA[second free:调用free的第1个实参]]></Key>
+					</Info>
+				</TraceNode>
+				<TraceNode index="2" formalPara="true">
+					<Info file="/home/wei/saga/saga-grope/testResult/PerformanceTest/OPEN_SOURCE/clib/clib-masterllvm-15/src/common/clib-package.c" line="622" endline="622" column="12" endcolumn="15" type="clib_package_new_from_slug_with_package_name" edge="">
+						<Key><![CDATA[freepath:把值存入到变量url]]></Key>
+					</Info>
+					<Info file="/home/wei/saga/saga-grope/testResult/PerformanceTest/OPEN_SOURCE/clib/clib-masterllvm-15/src/common/clib-package.c" line="727" endline="727" column="11" endcolumn="14" type="clib_package_new_from_slug_with_package_name" edge="">
+						<Key><![CDATA[freepath:读取变量url的值]]></Key>
+					</Info>
+					<Info file="/home/wei/saga/saga-grope/testResult/PerformanceTest/OPEN_SOURCE/clib/clib-masterllvm-15/src/common/clib-package.c" line="727" endline="727" column="11" endcolumn="14" type="clib_package_new_from_slug_with_package_name" edge="call">
+						<Key><![CDATA[freepath:调用free的第1个实参]]></Key>
+					</Info>
+					<Info file="/home/wei/saga/saga-grope/testResult/PerformanceTest/OPEN_SOURCE/clib/clib-masterllvm-15/src/common/clib-package.c" line="777" endline="777" column="7" endcolumn="10" type="clib_package_new_from_slug_with_package_name" edge="use">
+						<Key><![CDATA[second free:读取变量url的值]]></Key>
+					</Info>
+					<Info file="/home/wei/saga/saga-grope/testResult/PerformanceTest/OPEN_SOURCE/clib/clib-masterllvm-15/src/common/clib-package.c" line="777" endline="777" column="7" endcolumn="10" type="clib_package_new_from_slug_with_package_name" edge="use">
+						<Key><![CDATA[second free:调用free的第1个实参]]></Key>
+					</Info>
+				</TraceNode>
+			</TraceInfos>
+		</Bug>
+	</BugsInfo>
+	<BugsDescptionInfo />
+</UbiSec>
