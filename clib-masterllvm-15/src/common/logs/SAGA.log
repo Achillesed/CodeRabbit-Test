@@ -1,0 +1,15 @@
+[default][INFO][08-21 14:36:19]:SAGA START
+[default][INFO][08-21 14:36:19]:Processing Arguments..
+[default][INFO][08-21 14:36:19]:Loading modules...
+[default][WARNING][08-21 14:36:19]:bitcode is optimized!
+[default][INFO][08-21 14:36:19]:Building svfg...
+[default][INFO][08-21 14:36:19]:graph construction time: 0.083856s
+
+[default][INFO][08-21 14:36:19]:Running checker... memoryusing = 59.9922 ,mem available =22067.8
+[default][INFO][08-21 14:36:19]:running UAFPEChecker
+[default][INFO][08-21 14:36:19]:UAFPEChecker, Task fin used time: 0.100816
+
+[default][INFO][08-21 14:36:19]:TASK LINE SPEND 0.100859 s 
+
+[default][INFO][08-21 14:36:19]:Saga total time: 0.193915s
+

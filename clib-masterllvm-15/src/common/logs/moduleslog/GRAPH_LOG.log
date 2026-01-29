@@ -1,0 +1,813 @@
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SagaSVFGBuilder::sagaBuildSVFG} starting with arg {SVFModule: test.bc}:
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 1: build PAG with SVFMoudle.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 2: Flow-Sensitive Pointer Analysis with PAG.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 3: build SVFG With Dependance.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SVFIRBuilder::build} starting with arg {SVFModule: test.bc}:
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 1: intialize nodes with invoking initialiseNodes().
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 2: handle global variables with invoking visitGlobal(svfModule).
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 3: hanle functions, 97 in total.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 4: other steps.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SVFIRBuilder::build} ended with arg {SVFModule: test.bc} and return {PAG: 0x48da4d0 with 5050 nodes and 7609 edges}.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {FlowSensitive::analyze} starting with no arg to do pointer analysis
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 1: initialize which do Ansdersen PTA in fact and build the initial SVFG according to Andersen.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 2: while loop
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 3: other steps.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 4: finalize.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {FlowSensitive::initialize} starting with no arg to do initial work for flow-sensitive PTA.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 1: invoke PointerAnalysis::initialize()
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 2: Andersen PTA with invoke AndersenWaveDiff::createAndersenWaveDiff().
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 3: other works
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 4: create SVFG with invoking buildPTROnlySVFGWithoutOPT()
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SVFGBuilder::build} starting with arg {BVDataPTAImpl *: 0x4743080, VFG::VFGK : PTRONLYSVFG}:
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 1: build mssa.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 2: build SVFG.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SVFGBuilder::buildMSSA} starting with arg {BVDataPTAImpl *: 0x4743080, VFG::VFGK : PTRONLYSVFG}:
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: kh_clear_ptr, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: kh_clear_ptr, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_set_opts, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_set_opts, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_load_from_manifest, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_load_from_manifest, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_new, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_new, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_load_local_manifest, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_load_local_manifest, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: json_object_get_string_safe, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: json_object_get_string_safe, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: json_array_get_string_safe, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: json_array_get_string_safe, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: parse_package_deps, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: parse_package_deps, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_free, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_free, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_new_from_slug, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_new_from_slug, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_new_from_slug_with_package_name, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_new_from_slug_with_package_name, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_url, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_url, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_url_from_repo, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_url_from_repo, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_parse_author, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_parse_author, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_parse_version, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_parse_version, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_parse_name, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_parse_name, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_dependency_new, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_dependency_new, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_install_executable, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_install_executable, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: set_prefix, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: set_prefix, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_install_dependencies, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_install_dependencies, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_install, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_install, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: fetch_package_file, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: fetch_package_file, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: install_packages, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: install_packages, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_install_development, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_install_development, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_dependency_free, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_dependency_free, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_cleanup, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_cleanup, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: kh_destroy_ptr, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: kh_destroy_ptr, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_file_url, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_file_url, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_repo, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_repo, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: kh_init_ptr, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: kh_init_ptr, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: fetch_package_file_work, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: fetch_package_file_work, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_slug, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_slug, Frontier: 0x7ffdb8dfede0, DTree: 0x7ffdb8dfee40} and return void
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SVFGBuilder::buildMSSA} ended with arg {BVDataPTAImpl *: 0x4743080, VFG::VFGK : PTRONLYSVFG} and return {mssa: 0x58d79f0 with 957 LoadMus, 281 StoreChis, 517 EntryChis, 517 RetMus, 368 CallMus, 237 CallChis and 652 BBPhis}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SVFG::buildSVFG} starting with no arg:
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 1: addSVFGNodesForAddrTakenVars().
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 2: connectIndirectSVFGEdges().
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SVFG::buildSVFG} ended.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SVFGBuilder::build} ended with arg {BVDataPTAImpl *: 0x4743080, VFG::VFGK : PTRONLYSVFG} and return {SVFG: 0x5a2f960 with 5488 nodes and 7161 edges}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {FlowSensitive::initialize} ended with no arg with pointer analysis finished.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {FlowSensitive::analyze} ended with no arg with pointer analysis finished.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SVFGBuilder::build} starting with arg {BVDataPTAImpl *: 0x504a660, VFG::VFGK : FULLSVFG_DEP}:
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 1: build mssa.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 2: build SVFG.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SVFGBuilder::buildMSSA} starting with arg {BVDataPTAImpl *: 0x504a660, VFG::VFGK : FULLSVFG_DEP}:
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: kh_clear_ptr, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: kh_clear_ptr, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: kh_clear_ptr, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 4 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 4: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 4
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: kh_clear_ptr, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_set_opts, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_set_opts, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_set_opts, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 39 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 39: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 39
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_set_opts, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_load_from_manifest, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_load_from_manifest, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_load_from_manifest, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 7 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 7: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 7
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_load_from_manifest, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_new, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_new, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_new, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 87 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 87: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 87
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_new, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_load_local_manifest, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_load_local_manifest, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_load_local_manifest, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 6 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 6: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 6
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_load_local_manifest, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: json_object_get_string_safe, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: json_object_get_string_safe, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: json_object_get_string_safe, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 4 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 4: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 4
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: json_object_get_string_safe, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: json_array_get_string_safe, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: json_array_get_string_safe, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: json_array_get_string_safe, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 4 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 4: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 4
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: json_array_get_string_safe, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: parse_package_deps, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: parse_package_deps, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: parse_package_deps, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 23 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 23: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 23
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: parse_package_deps, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_free, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_free, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_free, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 38 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 38: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 38
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_free, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_new_from_slug, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_new_from_slug, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_new_from_slug, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 8 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 8: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 8
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_new_from_slug, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_new_from_slug_with_package_name, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_new_from_slug_with_package_name, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_new_from_slug_with_package_name, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 100 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 100: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 100
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_new_from_slug_with_package_name, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_url, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_url, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_url, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 13 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 13: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 13
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_url, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_url_from_repo, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_url_from_repo, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_url_from_repo, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 12 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 12: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 12
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_url_from_repo, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_parse_author, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_parse_author, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_parse_author, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 1 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 1: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 1
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_parse_author, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_parse_version, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_parse_version, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_parse_version, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 1 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 1: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 1
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_parse_version, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_parse_name, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_parse_name, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_parse_name, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 1 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 1: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 1
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_parse_name, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_dependency_new, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_dependency_new, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_dependency_new, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 12 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 12: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 12
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_dependency_new, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_install_executable, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_install_executable, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_install_executable, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 73 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 73: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 73
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_install_executable, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: set_prefix, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: set_prefix, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: set_prefix, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 9 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 9: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 9
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: set_prefix, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_install_dependencies, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_install_dependencies, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_install_dependencies, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 7 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 7: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 7
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_install_dependencies, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_install, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_install, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_install, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 91 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 91: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 91
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_install, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: fetch_package_file, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: fetch_package_file, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: fetch_package_file, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 1 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 1: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 1
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: fetch_package_file, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: install_packages, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: install_packages, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: install_packages, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 30 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 30: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 30
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: install_packages, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_install_development, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_install_development, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_install_development, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 7 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 7: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 7
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_install_development, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_dependency_free, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_dependency_free, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_dependency_free, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 1 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 1: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 1
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_dependency_free, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_cleanup, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_cleanup, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_cleanup, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 9 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 9: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 9
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_cleanup, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: kh_destroy_ptr, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: kh_destroy_ptr, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: kh_destroy_ptr, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 3 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 3: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 3
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: kh_destroy_ptr, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_file_url, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_file_url, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_file_url, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 7 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 7: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 7
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_file_url, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_repo, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_repo, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_repo, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 3 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 3: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 3
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_repo, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: kh_init_ptr, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: kh_init_ptr, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: kh_init_ptr, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 1 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 1: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 1
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: kh_init_ptr, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: fetch_package_file_work, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: fetch_package_file_work, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: fetch_package_file_work, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 32 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 32: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 32
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: fetch_package_file_work, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_slug, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: MemSSA: buildMemSSA
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: build
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} starting with arg {SVFFunction: clib_package_slug, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP1: setter
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP2: createMUCHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP3: insertPHI
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP4: SSARename
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {MemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_slug, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} starting with arg {BasicBlock entry}
+[DEBUG][08-21 14:36:19][FUNCTION]:function {DFST::build_dfst} ended and returned a DFST with 3 nodes
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} starting with arg {Tree: 0x7ffdb8dfec98} with size = 3: 
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {build_cycles} ended and returned {Cycles: 0x7ffdb8dfede0}.
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:DFST size = 3
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DataDepMemSSA::buildMemSSA} ended with arg {SVFFunction: clib_package_slug, Frontier: 0x7ffdb8dfee60, DTree: 0x7ffdb8dfeec0} and return void
+
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SVFGBuilder::buildMSSA} ended with arg {BVDataPTAImpl *: 0x504a660, VFG::VFGK : FULLSVFG_DEP} and return {mssa: 0x621ba40 with 1089 LoadMus, 439 StoreChis, 615 EntryChis, 615 RetMus, 400 CallMus, 249 CallChis and 979 BBPhis}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DepSVFG::buildSVFG} start: 
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SVFG::buildSVFG} starting with no arg:
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 1: addSVFGNodesForAddrTakenVars().
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:    STEP 2: connectIndirectSVFGEdges().
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SVFG::buildSVFG} ended.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {DepSVFG::buildSVFG} ended.
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SVFGBuilder::build} ended with arg {BVDataPTAImpl *: 0x504a660, VFG::VFGK : FULLSVFG_DEP} and return {SVFG: 0x64cb430 with 7671 nodes and 9197 edges}
+[GRAPH_LOG][INFO][08-21 14:36:19][FUNCTION]:function {SagaSVFGBuilder::sagaBuildSVFG} ended with arg {SVFModule: test.bc}.

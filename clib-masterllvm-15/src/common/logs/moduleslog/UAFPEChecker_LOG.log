@@ -1,0 +1,2 @@
+[UAFPEChecker_LOG][INFO][08-21 14:36:19][FUNCTION]:function {UAFPEChecker::analyze} start with arg {filename: saga_output.xml}
+[UAFPEChecker_LOG][INFO][08-21 14:36:19][FUNCTION]:function {UAFPEChecker::analyze} ended.
