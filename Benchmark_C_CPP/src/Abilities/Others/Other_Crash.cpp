@@ -1,0 +1,1 @@
+static void a() { __builtin_bit_cast(unsigned long long, &a) | 1; }
